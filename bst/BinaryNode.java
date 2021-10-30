@@ -82,4 +82,5 @@ public class BinaryNode<T> {
     }
     return newRoot;
   }
+
 }
