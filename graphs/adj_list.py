@@ -34,6 +34,13 @@ def displaygraph(g):
 		print(str(z) + " ", end='')
 		print(graph[z])
 
+# BFS algorithm
+# create a queue
+# add start node to queue
+# while queue is not empty,
+# pop the head of the queue, mark it as seen
+# add its unseen neighbors to the queue
+
 def bfs(g, start):
 	# pop() and append() let us interface with the generic list as a queue
 	queue = [] # used to store neighbors
@@ -42,11 +49,28 @@ def bfs(g, start):
 	while len(queue) > 0:
 		print(queue)
 		curr = queue.pop(0)
+		seen.append(curr)
 		for v in graph[curr]:
 			if v not in seen:
 				queue.append(v)
 				seen.append(v)
-		seen.append(curr)
+
+def dfs(g, start, seen=[]):
+	print("commencing DFS on {}".format(start))
+	if len(seen) == 0:
+		seen.append(start)
+	visited = seen
+	for v in g[start]:
+		if v not in visited:
+			visited.append(v)
+			dfs(g, v, visited)
+
+def articulation_points(g):
+	# articulation points are defined as vertices which, when removed would split the graph in two parts
+	# a biconnected graph has no articulation points
+	p = []
+
+	return p
 
 makeedge(graph, 0, 2)
 makeedge(graph, 0, 1)
@@ -65,6 +89,11 @@ makeedge(graph, 4, 2)
 makeedge(graph, 5, 3)
 makeedge(graph, 5, 0)
 
+print("Graph:")
 displaygraph(graph)
 
+print("BFS results:")
 bfs(graph, 0)
+
+print("DFS results:")
+dfs(graph, 0)
