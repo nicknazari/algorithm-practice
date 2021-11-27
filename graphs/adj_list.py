@@ -70,6 +70,9 @@ def articulation_points(g):
 	# a biconnected graph has no articulation points
 	p = []
 
+	# to solve this problem, we will first solve the problem of MST.
+	# with a valid MST algorithm, we can modify it to elegantly find articulation points
+
 	return p
 
 makeedge(graph, 0, 2)
