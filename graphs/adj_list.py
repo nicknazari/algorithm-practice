@@ -75,6 +75,21 @@ def articulation_points(g):
 
 	return p
 
+# MST ALGORITHMS
+
+# this code only works for non-weighted graphs, need to make a version where the edges have weights (objects)
+
+def prims(g):
+	# given a graph g, we want to return a list of edges for the MST
+	# initialize list to contain starting vertex
+	# while there exist vertices not in list
+		# Find minimum weighted edge that connected a vertex in list to a vertex not in list
+	return
+
+def kruskals(g):
+	# given a graph g, we want to return a list of edges for the MST
+	return
+
 makeedge(graph, 0, 2)
 makeedge(graph, 0, 1)
 makeedge(graph, 0, 5)
